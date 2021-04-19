@@ -7,13 +7,26 @@
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "composer/package-versions-deprecated": "1.11.99.1",
+        "doctrine/annotations": "^1.12",
+        "doctrine/doctrine-bundle": "^2.3",
+        "doctrine/doctrine-migrations-bundle": "^3.0",
+        "doctrine/orm": "^2.8",
+        "google/apiclient": "^2.7",
+        "sensio/framework-extra-bundle": "^6.1",
         "symfony/console": "5.2.*",
+        "symfony/dom-crawler": "5.2.*",
         "symfony/dotenv": "5.2.*",
         "symfony/flex": "^1.3.1",
         "symfony/framework-bundle": "5.2.*",
+        "symfony/property-access": "5.2.*",
+        "symfony/proxy-manager-bridge": "5.2.*",
+        "symfony/security-bundle": "5.2.*",
+        "symfony/serializer": "5.2.*",
         "symfony/yaml": "5.2.*"
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.30"
     },
     "config": {
         "optimize-autoloader": true,
@@ -46,7 +59,8 @@
             "@auto-scripts"
         ],
         "post-update-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "Google\\Task\\Composer::cleanup"
         ]
     },
     "conflict": {
@@ -56,6 +70,9 @@
         "symfony": {
             "allow-contrib": false,
             "require": "5.2.*"
-        }
+        },
+        "google/apiclient-services": [
+            "Books"
+        ]
     }
 }
